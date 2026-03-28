@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanix Hospitality - Career & Training</title>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Fonts: Poppins and Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"><i class="fa-solid fa-anchor"></i></div>
+
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <img src="./assets/Screenshot%202026-03-27%20231151.png" alt="Oceanix Hospitality Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#process" class="nav-link">Our Process</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#training" class="nav-link">Training</a></li>
+                    <li><a href="https://wa.me/919876543210" target="_blank" class="btn btn-primary nav-cta"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-sticky-wrap">
+                <video class="hero-video" id="scroll-video" muted playsinline preload="auto">
+                    <source src="./assets/herosection.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="scroll-down-indicator" id="scroll-prompt">
+                    <span>Scroll Down</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="hero-content container fade-up">
+                    <h1>Skill Development. <span class="gold-text">Career Guidance.</span> Real-World Preparation.</h1>
+                    <p class="subtitle">Empowering aspiring professionals with elite training for the global Cruise and Hospitality industry.</p>
+                    <div class="hero-btns">
+                        <a href="#services" class="btn btn-primary">Our Programs</a>
+                        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Start Your Journey</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section container">
+            <div class="about-grid">
+                <div class="about-text fade-left">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2 class="section-title">A Premier Skill Development & Career Guidance Institute</h2>
+                    <p>Oceanix Career & Training Centre is a pioneer in preparing ambitious professionals for high-end international careers. Our focus is on bridging the skills gap through specialized industry-focused training.</p>
+                    <p>We provide a structured roadmap to success, covering everything from professional communication to role-specific technical grooming for global sectors.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-check gold-text"></i> English Communication Training</li>
+                        <li><i class="fa-solid fa-check gold-text"></i> Interview Preparation & Coaching</li>
+                        <li><i class="fa-solid fa-check gold-text"></i> Documentation & Career Guidance</li>
+                        <li><i class="fa-solid fa-check gold-text"></i> Cruise, Hospitality & Fitness Specialties</li>
+                    </ul>
+                </div>
+                <!-- Will inject dummy image via CSS or JS dynamically later -->
+                <div class="about-image fade-right">
+                    <div class="img-wrapper">
+                         <!-- Placehoder for an generated image -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section (Timeline) -->
+        <section id="process" class="process section container">
+            <div class="center-text fade-up">
+                <span class="section-subtitle">Your Roadmap</span>
+                <h2 class="section-title">The Oceanix Guidance Process</h2>
+                <p class="max-width-text mx-auto">A structured, step-by-step approach to transform your professional profile and prepare you for the global stage.</p>
+            </div>
+            
+            <div class="timeline-container margin-top-2">
+                <div class="timeline-line"></div>
+                
+                <!-- Step 1 -->
+                <div class="timeline-step" data-step="1">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-right">
+                        <span class="step-number">01</span>
+                        <h3>Initial Counselling & Career Discussion</h3>
+                        <p>One-on-one session to understand your aspirations and align them with global industry opportunities.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="timeline-step" data-step="2">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-left">
+                        <span class="step-number">02</span>
+                        <h3>Skill Assessment & Role Suitability</h3>
+                        <p>Comprehensive evaluation of your current skills to determine the best-fit roles in Cruise, Hospitality, or Fitness.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="timeline-step" data-step="3">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-right">
+                        <span class="step-number">03</span>
+                        <h3>Core Training Initiation</h3>
+                        <p>Intensive English communication and interview behavior training begins to build your professional foundation.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="timeline-step" data-step="4">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-left">
+                        <span class="step-number">04</span>
+                        <h3>Role-Specific Skill Development</h3>
+                        <p>Targeted training sessions focused on the specific technical and soft skills required for your chosen career path.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="timeline-step" data-step="5">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-right">
+                        <span class="step-number">05</span>
+                        <h3>Resume & Profile Preparation</h3>
+                        <p>Crafting high-impact, ATS-friendly resumes and professional LinkedIn profiles to stand out to global employers.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 6 -->
+                <div class="timeline-step" data-step="6">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-left">
+                        <span class="step-number">06</span>
+                        <h3>Interview Prep & Mock Sessions</h3>
+                        <p>Realistic mock interviews and feedback loops to ensure you are fully prepared for actual industry screenings.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 7 -->
+                <div class="timeline-step" data-step="7">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-right">
+                        <span class="step-number">07</span>
+                        <h3>Application Guidance</h3>
+                        <p>Expert mentorship on where and how to apply for the best career opportunities internationally.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 8 -->
+                <div class="timeline-step" data-step="8">
+                    <div class="step-point"></div>
+                    <div class="step-content fade-left">
+                        <span class="step-number">08</span>
+                        <h3>Documentation & Formalities Guidance</h3>
+                        <p>Final guidance on maritime documentation, visa applications, and essential formalities to start your career.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Highlight Preview (Home) -->
+        <section class="services-preview section bg-light">
+            <div class="container center-text fade-up">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">End-to-End Career Support</h2>
+                <div class="preview-cards">
+                    <!-- Cards injected here dynamically or styled -->
+                    <div class="card fade-up delay-100">
+                        <i class="fa-solid fa-compass card-icon"></i>
+                        <h3>Career Advisory</h3>
+                        <p>Expert guidance to chart your ideal career path in hospitality.</p>
+                    </div>
+                    <div class="card fade-up delay-200">
+                        <i class="fa-solid fa-file-signature card-icon"></i>
+                        <h3>Resume Building</h3>
+                        <p>ATS-friendly resume and professional LinkedIn profile optimization.</p>
+                    </div>
+                    <div class="card fade-up delay-300">
+                        <i class="fa-solid fa-comments card-icon"></i>
+                        <h3>Interview Prep</h3>
+                        <p>Rigorous mock interviews and confidence-building sessions.</p>
+                    </div>
+                    <div class="card fade-up delay-400">
+                        <i class="fa-solid fa-ship card-icon"></i>
+                        <h3>Cruise Training</h3>
+                        <p>Specialized modules targeting global cruise line requirements.</p>
+                    </div>
+                </div>
+                <div class="margin-top-2">
+                    <a href="#services" class="btn btn-outline">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Preview (Home) -->
+        <section class="packages-preview section container">
+            <div class="center-text fade-up">
+                <span class="section-subtitle">Invest in Your Future</span>
+                <h2 class="section-title">Featured Programs</h2>
+            </div>
+            <div class="pricing-cards">
+                <div class="price-card fade-up delay-100">
+                    <h4>Basic Career Training</h4>
+                    <ul class="features">
+                        <li>Essential training</li>
+                        <li>Resume formulation</li>
+                        <li>Basic interview prep</li>
+                    </ul>
+                    <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline-gold mt-auto">Enquire Now</a>
+                </div>
+                <div class="price-card featured fade-up delay-200">
+                    <div class="ribbon">Popular</div>
+                    <h4>Cruise Career Prep</h4>
+                    <ul class="features">
+                        <li>Cruise-specific training</li>
+                        <li>Documentation support</li>
+                        <li>Advanced interview prep</li>
+                        <li>Visa guidelines</li>
+                    </ul>
+                    <a href="https://wa.me/919876543210" target="_blank" class="btn btn-primary mt-auto">Enquire Now</a>
+                </div>
+                <div class="price-card fade-up delay-300">
+                    <h4>Premium Career Prep</h4>
+                    <ul class="features">
+                        <li>Complete end-to-end support</li>
+                        <li>Priority training</li>
+                        <li>Advanced career coaching</li>
+                        <li>Personality & English training</li>
+                    </ul>
+                    <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline-gold mt-auto">Enquire Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorized Training & Services Section -->
+        <section id="services" class="services-detail section bg-navy text-white">
+            <div class="container fade-up">
+                <span class="section-subtitle gold-text">What We Teach</span>
+                <h2 class="section-title">Comprehensive Training Categories</h2>
+                <div class="services-grid-new">
+                    <!-- Category 1 -->
+                    <div class="service-category fade-up">
+                        <h3><i class="fa-solid fa-comments"></i> Communication & Interview</h3>
+                        <ul class="cat-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> English Communication (Online & Offline)</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Workplace & Professional Language</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Intensive Mock Interview Sessions</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Vocabulary Building for Hospitality</li>
+                        </ul>
+                    </div>
+                    <!-- Category 2 -->
+                    <div class="service-category fade-up" style="transition-delay: 0.1s;">
+                        <h3><i class="fa-solid fa-dumbbell"></i> Skill Development</h3>
+                        <ul class="cat-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> Role-Specific Grooming & Technical Skills</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Cruise Hospitality Fundamentals</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Fitness & Gym Trainer Specialized Prep</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Personality & Etiquette Workshops</li>
+                        </ul>
+                    </div>
+                    <!-- Category 3 -->
+                    <div class="service-category fade-up" style="transition-delay: 0.2s;">
+                        <h3><i class="fa-solid fa-user-gear"></i> Career Guidance & Support</h3>
+                        <ul class="cat-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> High-Impact Resume & Profile Development</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Application Guidance & Portal Navigation</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Step-by-Step Industry Portal Guidance</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Career Pathway Strategy Sessions</li>
+                        </ul>
+                    </div>
+                    <!-- Category 4 -->
+                    <div class="service-category fade-up" style="transition-delay: 0.3s;">
+                        <h3><i class="fa-solid fa-file-shield"></i> Documentation & Process</h3>
+                        <ul class="cat-list">
+                            <li><i class="fa-solid fa-chevron-right"></i> CDC, SID & Medical Documentation Guidance</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> DG Shipping & INDOS Requirement Checks</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> STCW & Course Booking Assistance</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Visa Application Documentation Guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Approach Section -->
+        <section class="learning-approach section container">
+            <div class="center-text fade-up">
+                <span class="section-subtitle">Our Method</span>
+                <h2 class="section-title">The Oceanix Learning Approach</h2>
+            </div>
+            <div class="approach-grid margin-top-2">
+                <div class="approach-card fade-up">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <h3>Practical Training</h3>
+                    <p>Focus on hands-on exercises, real-world scenarios, and active participation rather than just theory.</p>
+                </div>
+                <div class="approach-card fade-up" style="transition-delay: 0.1s;">
+                    <i class="fa-solid fa-stairs"></i>
+                    <h3>Step-by-Step System</h3>
+                    <p>A structured curriculum that builds your confidence and skills progressively from day one.</p>
+                </div>
+                <div class="approach-card fade-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>Real-World Preparation</h3>
+                    <p>Simulating the exact environments and challenges you will face in international hospitality careers.</p>
+                </div>
+                <div class="approach-card fade-up" style="transition-delay: 0.3s;">
+                    <i class="fa-solid fa-user-clock"></i>
+                    <h3>Continuous Support</h3>
+                    <p>Dedicated mentorship and guidance throughout your training journey and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Disclaimer Section -->
+        <section class="disclaimer-section section bg-light">
+            <div class="container">
+                <div class="disclaimer-box fade-up">
+                    <h3><i class="fa-solid fa-circle-exclamation gold-text"></i> Important Disclaimer</h3>
+                    <p>Oceanix Career & Training Centre provides professional <strong>training and career guidance services only</strong>. We help equip you with the skills and documentation needed for global hospitality roles. However, all our training services are independent of interview outcomes. Final career decisions and selections depend entirely on external employers and their specific requirements. Our focus is purely on high-quality preparation, skill-building, and professional guidance.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Training Programs Section -->
+        <section id="training" class="training section bg-light">
+            <div class="container fade-up">
+                <div class="center-text">
+                    <span class="section-subtitle">Hone Your Skills</span>
+                    <h2 class="section-title">Specialized Training Programs</h2>
+                    <p class="max-width-text mx-auto">Master the exact skills top employers are looking for with our intense, role-specific training modules.</p>
+                </div>
+                <div class="training-grid margin-top-2">
+                    <div class="training-card fade-up delay-100">
+                        <div class="img-box cruise-bg"></div>
+                        <div class="training-content">
+                            <h3>Cruise Industry Training</h3>
+                            <p>Learn maritime safety, shipboard operations, and guest relations tailored for luxury cruise lines.</p>
+                        </div>
+                    </div>
+                    <div class="training-card fade-up delay-200">
+                        <div class="img-box hospitality-bg"></div>
+                        <div class="training-content">
+                            <h3>Elite Hospitality Training</h3>
+                            <p>Master 5-star hotel operations, F&B service excellence, and front office management.</p>
+                        </div>
+                    </div>
+                    <div class="training-card fade-up delay-300">
+                        <div class="img-box fitness-bg"></div>
+                        <div class="training-content">
+                            <h3>Fitness/Gym Trainer Grooming</h3>
+                            <p>Specialized programs for wellness staff, focusing on international fitness standards and client interaction.</p>
+                        </div>
+                    </div>
+                    <div class="training-card fade-up delay-400">
+                        <div class="img-box roles-bg"></div>
+                        <div class="training-content">
+                            <h3>Role-Specific Skill Training</h3>
+                            <p>Custom modules for chefs, mixologists, housekeeping supervisors, and entertainment staff.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section container fade-up">
+             <div class="center-text">
+                <span class="section-subtitle">Success Stories</span>
+                <h2 class="section-title">What Our Alumni Say</h2>
+            </div>
+            <div class="testimonial-grid margin-top-2">
+                <div class="testi-card fade-up delay-100">
+                    <p class="quote">"Oceanix transformed my resume and interview skills. The specialized training gave me the confidence to excel in my career journey at a major luxury cruise line!"</p>
+                    <div class="author">
+                        <div class="av">AR</div>
+                        <div>
+                            <h4>Arjun Raj</h4>
+                            <span>Guest Services, Luxury Cruises</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card fade-up delay-200">
+                    <p class="quote">"The mock interviews were incredibly realistic. The detailed guidance helped me understand exactly what international 5-star properties expect from professionals."</p>
+                    <div class="author">
+                        <div class="av">SK</div>
+                        <div>
+                            <h4>Sara Khan</h4>
+                            <span>Front Office Specialist</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="testi-card fade-up delay-300">
+                    <p class="quote">"Their holistic approach from communication to personality development prepared me perfectly for the challenges of global hospitality."</p>
+                    <div class="author">
+                        <div class="av">MP</div>
+                        <div>
+                            <h4>Manoj Patel</h4>
+                            <span>F&B Professional, International Fleet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-left">
+                        <span class="section-subtitle">Get in Touch</span>
+                        <h2 class="section-title">Ready to Start Your Journey?</h2>
+                        <p>Have questions about our training or career guidance? Reach out to our expert advisors today.</p>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Presence</h4>
+                                <p>Kochi | Mumbai</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Contact</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>careers@oceanixcentre.com</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Accordion -->
+                        <div class="faq-container margin-top-2">
+                            <h3 class="mb-1">Frequently Asked Questions</h3>
+                            <div class="faq-item">
+                                <button class="faq-btn">Do you provide career guidance? <i class="fa-solid fa-chevron-down"></i></button>
+                                <div class="faq-content"><p>We offer comprehensive career support and expertly prepare our Premium Package students to excel in interview opportunities.</p></div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-btn">What is included in the programs? <i class="fa-solid fa-chevron-down"></i></button>
+                                <div class="faq-content"><p>Our programs bundle individual services covering everything from basic communication training to full interview preparation and visa guidance depending on the tier.</p></div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-btn">Do you help with visas? <i class="fa-solid fa-chevron-down"></i></button>
+                                <div class="faq-content"><p>Yes, our visa guidance covers documentation preparation, application review, and specific requirements for C1/D maritime visas.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrap fade-right">
+                        <form class="contact-form">
+                            <h3>Book Free Consultation</h3>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 00000 00000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Topic of Interest</label>
+                                <select id="course" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="cruise">Cruise Career Prep</option>
+                                    <option value="hospitality">Hospitality Training</option>
+                                    <option value="single_service">Individual Service</option>
+                                    <option value="other">General Inquiry</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Start Your Training Journey</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-navy text-white">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                 <a href="#" class="logo text-white">
+                    <img src="./assets/Screenshot%202026-03-27%20231151.png" alt="Oceanix Hospitality Logo" class="nav-logo-img">
+                </a>
+                <p>A specialized skill development and career guidance centre empowering aspiring professionals for the global cruise and hospitality industry.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Oceanix Hospitality. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
