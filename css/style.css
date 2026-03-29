@@ -295,7 +295,7 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 700vh; /* Playback track length (increased to extend scroll duration) */
+    height: 400vh; /* Playback track length (reduced to speed up video scrubbing) */
     position: relative;
     background-color: var(--clr-navy); /* Fallback */
     background-image: url('../assets/hero.png');
@@ -325,6 +325,7 @@ ul {
     object-fit: cover;
     object-position: center top; /* Locks the top edge, forcing crop at the bottom */
     z-index: -2;
+    will-change: transform; /* Hardware acceleration for smoother mobile scrubbing */
 }
 
 .hero-overlay {
@@ -1084,20 +1085,32 @@ ul {
         flex-direction: column;
         gap: 1.5rem;
     }
+    .hero { height: 300vh; text-align: center; } /* Reduced height for faster mobile scrubbing */
+    .hero-content { text-align: center; }
     .hero-content h1 { font-size: 2.8rem; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .hero { text-align: center; }
-    .hero-btns { justify-content: center; }
+    .hero-btns { flex-direction: column; align-items: center; gap: 1rem; }
+    
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .about-features { display: inline-block; text-align: left; margin: 1.5rem auto 0; }
+    
     .footer-content { grid-template-columns: 1fr; }
     
-    /* Timeline adjustments */
-    .timeline-line { left: 30px; }
-    .step-point { left: 30px; }
-    .step-content { width: calc(100% - 60px); margin-left: 60px !important; }
+    /* Timeline adjustments: Centered Mobile Stack */
+    .timeline-line { display: none; }
+    .timeline-step { flex-direction: column; align-items: center; text-align: center; margin-bottom: 3rem; }
+    .step-point { position: static; transform: none; margin-bottom: 1.5rem; }
+    .step-content { width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
+    .step-number { left: 50% !important; right: auto !important; transform: translateX(-50%); top: -10px; }
+
+    /* Service Categories: Centered */
+    .service-category { text-align: center; }
+    .service-category h3 { justify-content: center; }
+    .cat-list { display: inline-block; text-align: left; }
 }
 
 @media screen and (max-width: 576px) {
     .hero-content h1 { font-size: 2.2rem; }
+    .hero-btns .btn { width: 100%; }
     .section { padding: 3rem 0; }
     .service-category { padding: 1.5rem; }
     .contact-form-wrap { padding: 2rem; }

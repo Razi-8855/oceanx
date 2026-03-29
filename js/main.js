@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 0. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
         smoothWheel: true,
+        smoothTouch: true, // Enable smooth scroll on touch devices
+        touchMultiplier: 1.5, // Natural touch momentum
         lerp: 0.08, // Buttery smooth easing
     });
 
@@ -176,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let targetTime = 0;
         let currentTime = 0;
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         function updateVideoLoop() {
             const heroRect = heroSection.getBoundingClientRect();
@@ -185,25 +188,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollRange = heroHeight - windowHeight;
             
             if (scrollRange > 0) {
-                // If heroRect.top is 0, we are at the top. As we scroll, it goes negative.
                 const scrollPos = -heroRect.top;
                 let progress = scrollPos / scrollRange;
-                
-                // Clamp progress to restrict scrubbing to the container natively
                 progress = Math.max(0, Math.min(1, progress));
                 
                 if (video.duration) {
-                    targetTime = progress * (video.duration - 0.1); // slight buffer to avoid looping logic issues
+                    targetTime = progress * (video.duration - 0.1); 
                 }
 
-                // Fade out scroll indicator as user scrolls down
+                // Fade out scroll indicator
                 const scrollPrompt = document.getElementById('scroll-prompt');
                 if (scrollPrompt) {
-                    // Fade out completely by around 15% scroll progress
                     scrollPrompt.style.opacity = Math.max(0, 0.8 - (progress * 5));
                 }
 
-                // Parallax text effect: push text down and fade out slightly as it scrolls
+                // Parallax text effect
                 const heroContent = heroSection.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.transform = `translateY(${progress * 100}px) scale(${1 - progress * 0.05})`;
@@ -211,17 +210,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Lerp the video time for a buttery smooth scrub effect
-            // Increasing this factor (from 0.08 to 0.15) for higher responsiveness (pseudo-higher FPS feel)
-            currentTime += (targetTime - currentTime) * 0.15;
+            // Lerp the video time - adjust factor for mobile vs desktop
+            const lerpFactor = isMobile ? 0.12 : 0.15;
+            currentTime += (targetTime - currentTime) * lerpFactor;
             
-            // Apply to video if the metadata is loaded
             if (video.readyState >= 1 && video.duration) {
-                // Ensure it remains paused in case the browser tried to resume it
                 if (!video.paused) video.pause();
                 
-                // Lowering the threshold (from 0.05 to 0.01) for much finer frame updates
-                if (!video.seeking && Math.abs(video.currentTime - currentTime) > 0.01) {
+                // Increase threshold on mobile (0.04s) to prevent jitter/lag on slower hardware
+                const threshold = isMobile ? 0.04 : 0.01;
+                if (!video.seeking && Math.abs(video.currentTime - currentTime) > threshold) {
                     video.currentTime = currentTime;
                 }
             }
