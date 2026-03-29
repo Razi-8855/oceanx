@@ -188,60 +188,40 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentTime = 0;
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-        function updateVideoLoop() {
-            const heroRect = heroSection.getBoundingClientRect();
-            const heroHeight = heroRect.height;
-            const windowHeight = window.innerHeight;
-            // Total distance available to scroll within the hero track
-            const scrollRange = heroHeight - windowHeight;
-            
-            if (scrollRange > 0) {
-                const scrollPos = -heroRect.top;
-                let progress = scrollPos / scrollRange;
-                progress = Math.max(0, Math.min(1, progress));
-                
+        // Use a more robust ScrollTrigger approach for mobile-friendly scrubbing
+        ScrollTrigger.create({
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            onUpdate: (self) => {
                 if (video.duration && !isNaN(video.duration)) {
-                    targetTime = progress * (video.duration - 0.1); 
+                    // Calculate target time directly from scroll progress
+                    const target = self.progress * (video.duration - 0.1);
+                    
+                    // On mobile, minimize setting currentTime to avoid decoding lag
+                    if (Math.abs(video.currentTime - target) > (isMobile ? 0.08 : 0.02)) {
+                        video.currentTime = target;
+                    }
                 }
-
-                // Fade out scroll indicator
+                
+                // Keep UI elements synced
+                const progress = self.progress;
                 const scrollPrompt = document.getElementById('scroll-prompt');
-                if (scrollPrompt) {
-                    scrollPrompt.style.opacity = Math.max(0, 0.8 - (progress * 5));
-                }
-
-                // Parallax text effect
+                if (scrollPrompt) scrollPrompt.style.opacity = Math.max(0, 0.8 - (progress * 5));
+                
                 const heroContent = heroSection.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.transform = `translateY(${progress * 100}px) scale(${1 - progress * 0.05})`;
                     heroContent.style.opacity = Math.max(0, 1 - Math.pow(progress, 2));
                 }
             }
-
-            // Lerp the video time - adjust factor for mobile vs desktop
-            const lerpFactor = isMobile ? 0.12 : 0.15;
-            currentTime += (targetTime - currentTime) * lerpFactor;
-            
-            if (video.readyState >= 1 && video.duration) {
-                if (!video.paused) video.pause();
-                
-                // Increase threshold on mobile (0.06s) to ensure the browser doesn't skip frame updates during fast scrolls
-                const threshold = isMobile ? 0.06 : 0.01;
-                if (!video.seeking && Math.abs(video.currentTime - currentTime) > threshold) {
-                    video.currentTime = currentTime;
-                }
-            }
-
-            requestAnimationFrame(updateVideoLoop);
-        }
-
-        video.addEventListener('loadedmetadata', () => {
-            requestAnimationFrame(updateVideoLoop);
         });
-        
-        if (video.readyState >= 1) {
-            requestAnimationFrame(updateVideoLoop);
-        }
+
+        // Ensure ScrollTrigger refreshes once video metadata is available
+        video.addEventListener('loadedmetadata', () => {
+            ScrollTrigger.refresh();
+        });
     }
 
     // 8. GSAP Timeline Animations

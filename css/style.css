@@ -1081,15 +1081,17 @@ ul {
     .nav-menu.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    .navbar { justify-content: center; position: relative; min-height: 80px; }
-    .logo { margin: 0 auto; }
-    .nav-logo-img { height: 60px; } /* Slightly smaller for mobile balancing */
-    .hamburger { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); display: block; }
+    .navbar { display: flex !important; justify-content: center !important; position: relative !important; min-height: 80px; width: 100% !important; padding: 0 20px !important; }
+    .logo { margin: 0 auto !important; position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; }
+    .nav-logo-img { height: 50px !important; width: auto !important; }
+    .hamburger { position: absolute !important; right: 20px !important; top: 50% !important; transform: translateY(-50%) !important; display: block !important; margin: 0 !important; }
     
-    .hero { height: 300vh; text-align: center; } /* Reduced height for faster mobile scrubbing */
-    .hero-content { text-align: center; }
-    .hero-content h1 { font-size: 2.8rem; }
-    .hero-btns { flex-direction: column; align-items: center; gap: 1rem; }
+    .hero { height: 350vh !important; text-align: center !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .hero-content { width: 100% !important; text-align: center !important; padding: 0 20px !important; margin: 0 auto !important; }
+    .hero-content h1 { font-size: 2.4rem !important; text-align: center !important; width: 100% !important; }
+    .subtitle { text-align: center !important; width: 100% !important; }
+    .hero-btns { flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 1rem !important; width: 100% !important; }
+    .hero-btns .btn { width: 100% !important; max-width: 280px !important; }
     
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
     .about-features { display: inline-block; text-align: left; margin: 1.5rem auto 0; }
