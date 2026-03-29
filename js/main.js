@@ -225,8 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (video.readyState >= 1 && video.duration) {
                 if (!video.paused) video.pause();
                 
-                // Increase threshold on mobile (0.04s) to prevent jitter/lag on slower hardware
-                const threshold = isMobile ? 0.04 : 0.01;
+                // Increase threshold on mobile (0.06s) to ensure the browser doesn't skip frame updates during fast scrolls
+                const threshold = isMobile ? 0.06 : 0.01;
                 if (!video.seeking && Math.abs(video.currentTime - currentTime) > threshold) {
                     video.currentTime = currentTime;
                 }

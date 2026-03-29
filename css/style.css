@@ -1081,8 +1081,9 @@ ul {
     .nav-menu.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    .navbar { justify-content: center; position: relative; }
+    .navbar { justify-content: center; position: relative; min-height: 80px; }
     .logo { margin: 0 auto; }
+    .nav-logo-img { height: 60px; } /* Slightly smaller for mobile balancing */
     .hamburger { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); display: block; }
     
     .hero { height: 300vh; text-align: center; } /* Reduced height for faster mobile scrubbing */
