@@ -167,14 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('home');
 
     if (video && heroSection) {
-        // Enforce pausing immediately and continuously
-        video.pause();
-        video.currentTime = 0;
+        // Force manual load to ensure metadata pulls on mobile
+        video.load();
         
-        // Prevent any unintended playback
-        video.addEventListener('play', () => {
-            video.pause();
-        });
+        // Mobile "Wake Up" - forces decoder to ready the first frame
+        const wakeUpVideo = () => {
+            video.play().then(() => {
+                video.pause();
+            }).catch(e => console.warn("Video wake-up suppressed:", e));
+            window.removeEventListener('touchstart', wakeUpVideo);
+            window.removeEventListener('scroll', wakeUpVideo);
+        };
+        window.addEventListener('touchstart', wakeUpVideo, { once: true });
+        window.addEventListener('scroll', wakeUpVideo, { once: true });
+
+        // Enforce pausing immediately
+        video.pause();
 
         let targetTime = 0;
         let currentTime = 0;
@@ -192,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let progress = scrollPos / scrollRange;
                 progress = Math.max(0, Math.min(1, progress));
                 
-                if (video.duration) {
+                if (video.duration && !isNaN(video.duration)) {
                     targetTime = progress * (video.duration - 0.1); 
                 }
 
